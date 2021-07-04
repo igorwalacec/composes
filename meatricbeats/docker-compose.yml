@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  metricbeat:
+    image: docker.elastic.co/beats/metricbeat:7.6.2
+    container_name: es_metricbeat_762
+    user: root
+    volumes:
+      - metricbeat_data:/usr/share/metricbeat/data
+      - ./metricbeat.yml:/usr/share/metricbeat/config/metricbeat.yml
+    command: ["--strict.perms=false", "-system.hostfs=/hostfs"]
+  
+volumes:
+  metricbeat_data:
+    driver: local

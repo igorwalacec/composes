@@ -1,0 +1,6 @@
+server.name: kibana
+server.host: "0.0.0.0"
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+elasticsearch.username: elastic
+elasticsearch.password: k1b3cRu
+xpack.monitoring.ui.container.elasticsearch.enabled: true

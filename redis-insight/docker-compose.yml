@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  redis:
+    image: redislabs/redisinsight
+    ports:
+      - "8001:8001"
+    volumes: 
+      - redisinsight_data:/db
+
+volumes:
+  redisinsight_data:
+    driver: local

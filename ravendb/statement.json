@@ -1,0 +1,109 @@
+{
+  "AuthenticationCode": "string",
+  "Amount": "decimal",
+  "CreatedAt" : "",
+  "Operation": "CASH_IN", //CASH_OUT
+  "Channel": "PAYBILL", // PAYBILL, TED, INTERNAL, CREDIT_CARD, INTERNATIONAL_CREDIT_CARD, CHARGEBACK, INTERNATIONAL_CHARGEBACK, PIX, BANKLISP, MOBILE_RECHARGE, ADJUSTMENT
+  
+  "Indetifier": "",  
+
+  "Sender": {
+    
+  },
+  
+  "Recipient": {
+    
+  }
+}
+
+// ********** Channels **********
+
+// PAYBILL,
+
+// TED, 
+// INTERNAL, -> internal transfer
+
+// CREDIT_CARD, 
+// INTERNATIONAL_CREDIT_CARD, 
+
+// CHARGEBACK,
+// INTERNATIONAL_CHARGEBACK,
+
+// PIX,
+
+// BANKLISP,
+
+// MOBILE_RECHARGE, 
+
+// ADJUSTMENT 
+
+// FEE -> Saque e Marcup
+// TAX -> IOF
+
+
+// ********** Channels **********
+
+// details based in channels
+
+
+// TED - REFUND - CASH IN
+{
+  "IsRefund" : "bool",
+  "Recipient" : {
+    "Name": "string", ??
+    "Document": "string",
+    "PersonType" : "CUSTOMER", //BUSINESS
+    "Account" : {
+      "Branch": "string",
+      "Number": "string",
+      "AccountType" : "string", //CHECKING, SAVINGS, PAYMENT, DEPOSIT...
+      "ISPB" : "string",
+    },
+  }
+}
+
+// BANKSLIP - REFUND - CASH IN - 
+{
+  "OriginalAmount" : "",
+  "DueDate": "", 
+  "IssueDate" : "",
+  "Digitable": "",
+}
+
+// TED - CASH OUT - 
+{
+  "Recipient" : {
+    "Name": "string", ?? 
+    "Document": "string",
+    "PersonType" : "CUSTOMER", //BUSINESS
+    "Account" : {
+      "Branch": "string",
+      "Number": "string",
+      "AccountType" : "string", //CHECKING, SAVINGS, PAYMENT, DEPOSIT...
+      "ISPB" : "string"
+    },
+  }
+}
+
+// "PAYBILL"
+{
+  "Barcode" : "string"
+}
+
+// MOBILE_RECHARGE - CASH OUT - 
+{
+  "Carrier" : "string",
+  "PhoneNumber" : "string"
+}
+
+// FEE 
+{ 
+  "type": "MARKUP", //WITHDRAWAL
+}
+
+//TAX
+{
+  "type": "IOF",
+}
+
+
